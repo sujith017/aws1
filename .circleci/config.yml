@@ -20,7 +20,7 @@ jobs:
           at: /app
       - run:
           name: Generate Terraform plan
-          command: terraform plan /app
+          command: ls
           # command: ls
   terraform_apply:
     docker:
