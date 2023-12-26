@@ -31,7 +31,7 @@ jobs:
           at: /app
       - run:
           name: Apply Terraform changes
-          command: terraform apply -auto-approve
+          command: terraform apply 
 
   terraform_destroy:
     docker:
