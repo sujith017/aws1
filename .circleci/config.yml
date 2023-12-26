@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Generate Terraform plan
           command: |
-            cd app
+            ls | cat
             terraform plan
           # command: ls
   terraform_apply:
