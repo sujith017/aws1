@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Initialize Terraform
-          command: terraform init /app
+          command: terraform init
 
   terraform_plan:
     docker:
@@ -31,7 +31,7 @@ jobs:
           at: /app
       - run:
           name: Apply Terraform changes
-          command: terraform apply 
+          command: terraform apply -auto-approve
 
   terraform_destroy:
     docker:
