@@ -20,8 +20,8 @@ jobs:
           at: /app
       - run:
           name: Generate Terraform plan
-          command: ls
-          # command: ls
+          command: terraform plan -out plan.out
+
   terraform_apply:
     docker:
       - image: hashicorp/terraform:1.0.2
@@ -31,7 +31,7 @@ jobs:
           at: /app
       - run:
           name: Apply Terraform changes
-          command: ls
+          command: terraform apply -auto-approve plan.out
 
   terraform_destroy:
     docker:
@@ -58,3 +58,4 @@ workflows:
       - terraform_destroy:
           requires:
             - terraform_apply
+
